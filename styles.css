@@ -1,0 +1,67 @@
+
+/* section {
+    display: grid;
+    grid-template-columns: 100px 50px 100px;
+    grid-template-rows: 80px auto 80px; 
+    column-gap: 10px;
+    row-gap: 15px;
+} */
+
+/* ---------------------------------------- */
+
+/* Create a grid of cards */
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates columns with a minimum width of 300px and a maximum width of 1fr */
+    gap: 20px; /* Add some gap between the cards */
+    /* max-width: 960px; Limit the maximum width of the section to 960px */
+    margin: 0 auto; /* Center the section horizontally */
+  }
+
+/* Apply the CSS style to the card element */
+card {
+    background-color: #f7f5e6; /* Beige */
+    border: 1px solid #333; /* Black */
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+  }
+  
+  /* Style the title element inside the card */
+  h2 {
+    font-size: 22px;
+    margin-top: 0;
+  }
+  
+  /* Style the author element inside the card */
+  p:nth-child(2) {
+    font-style: italic;
+  }
+  
+  /* Style the page count element inside the card */
+  p:last-child {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Add some extra style to give the card an old library card look */
+  /* card:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 5px solid #333;
+    border-radius: 5px;
+    z-index: -1;
+  } */
+  

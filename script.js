@@ -1,27 +1,47 @@
-// let myLibrary = [];
+let myLibrary = [];
 
-// function Book(title, author, pageCount, hasRead) {
-//     this.title = title;
-//     this.author = author;
-//     this.pageCount = pageCount;
-//     this.hasRead = hasRead;
-// }
-
-function addBookToLibrary(book) {
-    title = prompt('What is the title?');
-    const header = document.querySelector('header');
-    const myH1 = document.createElement('h1');
-    myH1.textContent = title;
-    header.appendChild(myH1);
+function Book(title, author, pageCount) {
+    this.title = title;
+    this.author = author;
+    this.pageCount = pageCount;
 }
 
-    // newTitle = prompt('What is the title of the book?');
-    // newBook = new Book(newTitle, 'Dan', '187', true);
-    // console.log(newBook);
+function addBookToLibrary(book) {
 
-    // bookCard = document.createElement('p');
-    // bookCard.textContent = newBook.title;
-    // bookCard.appendChild(newTitle);
+    title = prompt('What is the title?');
+    author = prompt('Who is the author?');
+    pageCount = prompt('How many pages is it?');
+
+    const newBook = new Book(title, author, pageCount);
+    console.log(newBook);
+
+    const container = document.querySelector('section');
+    const card = document.createElement('card');
+    container.appendChild(card);
+
+    const bookTitle = document.createElement('h2');
+    bookTitle.textContent = title;
+    card.appendChild(bookTitle);
+
+    const bookAuthor = document.createElement('p');
+    bookAuthor.textContent = author;
+    card.appendChild(bookAuthor);
+
+    const bookPages = document.createElement('p');
+    bookPages.textContent = `${pageCount} pages`;
+    card.appendChild(bookPages);
+
+    myLibrary.push(newBook);
+}
+
+function checkLibrary() {
+    console.table(myLibrary);
+}
+
+// function displayLibrary() {
+//     for (const book of library) {
+
+//     }
 // }
 
 
