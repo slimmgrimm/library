@@ -19,7 +19,7 @@ section {
   }
 
 /* Apply the CSS style to the card element */
-card {
+.card {
     background-color: #f7f5e6; /* Beige */
     border: 1px solid #333; /* Black */
     border-radius: 5px;
@@ -51,17 +51,4 @@ card {
     font-size: 14px;
     color: #666;
   }
-  
-  /* Add some extra style to give the card an old library card look */
-  /* card:before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border: 5px solid #333;
-    border-radius: 5px;
-    z-index: -1;
-  } */
   
