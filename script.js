@@ -35,25 +35,36 @@ function addBookToLibrary() {
 
     let newBook = new Book(title, author, pages)
     myLibrary.push(newBook)
+    // displayLibrary()
     window.alert('Book added!')
     let newBookForm = document.querySelector('#new-book-form')
     newBookForm.style.display = 'none'
 }
 
-function checkLibrary() {
+// function render() {
+//     let libraryBook = document.querySelector('.display')
+//     for (let i = 0; i < myLibrary.length; i++) {
+//         let book = myLibrary[i]
+//         let bookEl = document.createElement('div') 
+//     }
+// }
+function checkLibrary() { 
     console.table(myLibrary);
 }
 
 function displayLibrary() {
-
-    for (book of myLibrary) {
-    console.log(book);
-
     const container = document.querySelector('.display');
+    container.innerHTML = "";
+    
+    for (let i = 0; i < myLibrary.length; i++) {
+        let book = myLibrary[i]
+    
+
+    
     const card = document.createElement('div');
     card.classList.add('card')
     container.appendChild(card);
-
+ 
     const bookTitle = document.createElement('h2');
     bookTitle.textContent = book.title;
     card.appendChild(bookTitle);
@@ -65,11 +76,17 @@ function displayLibrary() {
     const bookPages = document.createElement('p');
     bookPages.textContent = `${book.pageCount} pages`;
     card.appendChild(bookPages);
+
+    const removeBtn = document.createElement('button')
+    removeBtn.textContent = `Remove Book`
+    removeBtn.onclick = function () {removeBook(i)}
+    card.appendChild(removeBtn)
     }
 }
-function deleteBook(currentBook) {
-    library.splice(currentBook, currentBook + 1);
-  }
+function removeBook(index) {
+    myLibrary.splice(index, 1)
+    displayLibrary()
+}
 
 //How to remove book from myLibrary array?
 //myLibrary.splice(thisIndexSomehow, 1);
